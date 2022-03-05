@@ -61,4 +61,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('dashboard/sync-user', [\App\Http\Controllers\AdminController::class, 'syncUser'])
         ->name('dashboard.sync-user')->middleware(['can:isAdmin']);
+
+    Route::get('dashboard/sso-login', [\App\Http\Controllers\SsoLoginController::class, 'getLogin'])
+        ->name('dashboard.sso-login');
+    Route::get('dashboard/sso-login-callback', [\App\Http\Controllers\SsoLoginController::class, 'getCallback'])
+        ->name('dashboard.sso-login-callback');
 });

@@ -44,7 +44,8 @@ class AdminController extends Controller
         event(new Registered($user));
 
         toast('User Added', 'success');
-        return back();
+
+        return $this->syncUser();
     }
 
     public function syncUser()
@@ -55,6 +56,10 @@ class AdminController extends Controller
             'client_secret' => config('config.system2_client_secret'),
             'scope' => '*',
         ]);
+        if ($response->failed()) {
+            \Alert::error('Error Has Occurred', $response->reason());
+            return back();
+        }
         $token = $response->json()['access_token'];
 
         $users = MainUser::all(['id', 'name', 'email', 'role']);
@@ -65,6 +70,10 @@ class AdminController extends Controller
                     'users' => $userGroups['user'] ?? []
                 ]
             );
+        if ($response->failed()) {
+            \Alert::error('Error Has Occurred', $response->reason());
+            return back();
+        }
         toast('User Synced', 'success');
         return back();
     }

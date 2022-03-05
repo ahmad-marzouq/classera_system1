@@ -23,7 +23,7 @@
                                 <span class="separator"></span>
                                 <a href="{{route('dashboard.sync-user')}}">Sync Users</a>
                             @endif
-                            <a href="#">SSO</a>
+                            <a href="{{route('dashboard.sso-login')}}">SSO</a>
                         </x-slot>
                     </x-nav-link-parent>
                 </div>
@@ -93,7 +93,7 @@
                         <span class="separator"></span>
                         <a href="{{route('dashboard.sync-user')}}">Sync Users</a>
                     @endif
-                    <a href="#">SSO</a>
+                    <a href="{{route('dashboard.sso-login')}}">SSO</a>
                 </x-slot>
             </x-responsive-nav-link-parent>
         </div>
