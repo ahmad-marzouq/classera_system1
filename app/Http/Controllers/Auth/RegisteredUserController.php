@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\MainUsers;
+use App\Models\MainUser;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'role' => ['required', 'string', 'in:user,admin'],
         ]);
-        $user = MainUsers::create([
+        $user = MainUser::create([
             'id' => \Str::random(26),
             'name' => $request->name,
             'email' => $request->email,

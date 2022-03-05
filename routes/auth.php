@@ -53,4 +53,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+    Route::get('dashboard/add-user', [\App\Http\Controllers\AdminController::class, 'addUser'])
+        ->name('dashboard.add-user')->middleware(['can:isAdmin']);
+    Route::post('dashboard/store-user', [\App\Http\Controllers\AdminController::class, 'storeUser'])
+        ->name('dashboard.store-user')->middleware(['can:isAdmin']);
+
+    Route::get('dashboard/sync-user', [\App\Http\Controllers\AdminController::class, 'syncUser'])
+        ->name('dashboard.sync-user')->middleware(['can:isAdmin']);
 });

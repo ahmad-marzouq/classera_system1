@@ -23,20 +23,20 @@ use Laravel\Sanctum\HasApiTokens;
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers query()
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers wherePassword($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereRememberToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereRoles($value)
- * @method static \Illuminate\Database\Eloquent\Builder|MainUsers whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser query()
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereRoles($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MainUser whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class MainUsers extends Authenticatable
+class MainUser extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
