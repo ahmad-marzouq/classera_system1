@@ -33,3 +33,4 @@ SYSTEM2_SSO_CLIENT_ID=""#Using php artisan passport:client --name="SSO Login" --
 ```shell
 php artisan migrate
 ```
+- You can create a new user using the `/register` route
